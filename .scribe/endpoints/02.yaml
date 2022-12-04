@@ -1,0 +1,139 @@
+name: Posts
+description: |-
+
+  API endpoints for posts crud
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: 'api/posts/update/{post_id}'
+    metadata:
+      title: 'Update a post.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post to update'
+        required: false
+        example: 19
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'The post''s title.'
+        required: true
+        example: et
+        type: string
+        custom: []
+      content:
+        name: content
+        description: 'The post''s content.'
+        required: true
+        example: distinctio
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/posts/delete/{post_id}'
+    metadata:
+      title: 'Delete a post.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post to delete'
+        required: false
+        example: 9
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/posts/user/{user_id}'
+    metadata:
+      title: 'Display a user''s posts'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the use.'
+        required: false
+        example: 6
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"error":"No query results for model [App\\Models\\User] 6"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/posts/add
+    metadata:
+      title: 'Create a new post.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'The post''s title.'
+        required: true
+        example: aut
+        type: string
+        custom: []
+      content:
+        name: content
+        description: 'The post''s content.'
+        required: true
+        example: tempora
+        type: string
+        custom: []
+      users_id:
+        name: users_id
+        description: 'The related user''s id.'
+        required: true
+        example: 16
+        type: integer
+        custom: []
+    responses: []
+    responseFields: []
